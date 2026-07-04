@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  --background: #E6E1DA;
+  --foreground: #1C1A17;
+
+  --dynamic-white: #1C1A17;
+  --dynamic-black: #E6E1DA;
+  
+  --brand-black: #EDE9E2;
+  --brand-dark: #DDD8CF;
+  --brand-gray: #CBC4B7;
+  --brand-light: #2E2C29;
+  --brand-white: #151412;
+  --brand-gold: #9D793C;
+  --brand-concrete: #66625B;
+  --brand-accent: #9D793C;
+
+  --glass-bg: rgba(28, 26, 23, 0.04);
+  --glass-border: rgba(28, 26, 23, 0.1);
+  --glass-bg-subtle: rgba(28, 26, 23, 0.02);
+  --glass-border-subtle: rgba(28, 26, 23, 0.06);
+  --glass-nav-bg: rgba(230, 225, 218, 0.85);
+}
+
+@theme {
+  --color-white: var(--dynamic-white);
+  --color-black: var(--dynamic-black);
+
+  --color-brand-black: var(--brand-black);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-gray: var(--brand-gray);
+  --color-brand-light: var(--brand-light);
+  --color-brand-white: var(--brand-white);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-concrete: var(--brand-concrete);
+  --color-brand-accent: var(--brand-accent);
+
+  --font-sans: "Inter", "Satoshi", sans-serif;
+  --font-serif: "Playfair Display", "Cormorant Garamond", serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: var(--glass-bg-subtle);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border-subtle);
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+  }
+  
+  .glass-dark {
+    background: var(--glass-nav-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border-subtle);
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+  }
+
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+  }
+
+  .text-gold {
+    color: var(--color-brand-gold);
+  }
+  
+  .bg-gold {
+    background-color: var(--color-brand-gold);
+  }
+
+  .border-gold {
+    border-color: var(--color-brand-gold);
+  }
+
+  .editorial-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(197, 160, 89, 0.3), transparent);
+  }
+}
