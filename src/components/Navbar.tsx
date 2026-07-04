@@ -33,27 +33,27 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out bg-[#ffffff] border-b-[4px] border-[#F4A300] ${
         isScrolled
-          ? 'glass-dark py-4'
-          : 'bg-transparent py-8'
+          ? 'py-2 shadow-sm'
+          : 'py-4'
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="text-xl font-bold tracking-[0.2em] text-white flex items-center gap-3 uppercase group">
-          <span className="font-serif italic text-brand-gold group-hover:text-white transition-colors duration-500">P</span>
+        <Link to="/" className="text-xl font-bold tracking-[0.2em] text-[#000000] flex items-center gap-3 uppercase group">
+          <span className="font-serif italic text-[#F4A300] group-hover:text-[#000000] transition-colors duration-500">P</span>
           <span className="hidden sm:inline font-light">PrithviGrid</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
-              className={`text-[11px] uppercase tracking-[0.2em] transition-all duration-300 hover:text-brand-gold ${
-                location.pathname === link.path ? 'text-brand-gold' : 'text-brand-light/60'
+              className={`text-[11px] uppercase tracking-[0.2em] transition-all duration-300 hover:text-[#F4A300] ${
+                location.pathname === link.path ? 'text-[#F4A300]' : 'text-[#000000]'
               }`}
             >
               {link.name}
@@ -61,7 +61,7 @@ const Navbar = () => {
           ))}
           <Link
             to="/contact"
-            className="ml-4 px-8 py-3 border border-brand-white/20 text-[11px] uppercase tracking-[0.2em] hover:bg-brand-white hover:text-brand-black transition-all duration-500"
+            className="ml-4 px-8 py-2 border border-[#000000]/20 text-[#000000] text-[11px] uppercase tracking-[0.2em] hover:bg-[#000000] hover:text-[#ffffff] transition-all duration-500"
           >
             Inquire
           </Link>
@@ -70,7 +70,7 @@ const Navbar = () => {
         {/* Mobile Controls */}
         <div className="flex items-center gap-4 lg:hidden">
           <button
-            className="text-white"
+            className="text-[#000000]"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -89,7 +89,7 @@ const Navbar = () => {
             className="fixed inset-0 z-40 bg-brand-black flex flex-col justify-center items-center gap-8 lg:hidden"
           >
             <button
-              className="absolute top-8 right-8 text-white"
+              className="absolute top-8 right-8 text-[#ffffff]"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <X size={32} />
@@ -101,7 +101,7 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className="text-2xl font-serif italic text-white hover:text-brand-gold transition-colors"
+                className="text-2xl font-serif italic text-[#ffffff] hover:text-brand-gold transition-colors"
               >
                 {link.name}
               </Link>

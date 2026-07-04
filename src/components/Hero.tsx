@@ -7,12 +7,12 @@ const Hero = () => {
     <section className="relative h-screen w-full flex items-center overflow-hidden">
       {/* Background Image with Parallax Effect */}
       <motion.div 
-        initial={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 10, ease: "linear" }}
+        initial={{ scale: 1 }}
+        animate={{ scale: 1.1 }}
+        transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
         className="absolute inset-0 z-0"
       >
-        <div className="absolute inset-0 bg-brand-black/50 z-10" />
+        <div className="absolute inset-0 bg-[#000000]/50 z-10" />
         <img
           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80"
           alt="Luxury Architecture"
@@ -21,16 +21,16 @@ const Hero = () => {
       </motion.div>
 
       {/* Cinematic Gradient Overlays */}
-      <div className="absolute inset-0 z-[5] bg-gradient-to-b from-brand-black/60 via-transparent to-brand-black" />
-      <div className="absolute inset-0 z-[5] bg-gradient-to-r from-brand-black via-transparent to-transparent" />
+      <div className="absolute inset-0 z-[5] bg-gradient-to-b from-[#000000]/60 via-transparent to-[#000000]/40" />
+      <div className="absolute inset-0 z-[5] bg-gradient-to-r from-[#000000]/60 via-transparent to-transparent" />
 
-      <div className="container mx-auto px-6 md:px-12 relative z-30 pt-32 pb-48">
+      <div className="container mx-auto px-6 md:px-12 relative z-30 pt-48 pb-48">
         <div className="max-w-4xl">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-6xl md:text-8xl lg:text-9xl font-serif leading-[1.05] text-white mb-8"
+            className="text-5xl md:text-7xl lg:text-8xl font-serif leading-[1.05] text-[#ffffff] mb-8"
           >
             Building the <br />
             <span className="italic">Timeless</span>
@@ -40,7 +40,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="text-lg md:text-xl text-brand-light/70 mb-12 max-w-xl font-light leading-relaxed"
+            className="text-base md:text-lg text-[#ffffff] mb-12 max-w-xl font-light leading-relaxed"
           >
             Handcrafted spaces that blend structural precision with cinematic atmosphere. We create enduring legacies through the lens of modern masonry.
           </motion.p>
@@ -84,8 +84,8 @@ const Hero = () => {
                 transition={{ duration: 1, delay: 0.8 + (i * 0.2), ease: [0.16, 1, 0.3, 1] }}
                 className="pointer-events-auto"
               >
-                <div className="text-3xl md:text-4xl font-serif text-white mb-3">{stat.value}</div>
-                <div className="text-[11px] uppercase tracking-[0.4em] text-brand-concrete font-medium">{stat.label}</div>
+                <div className="text-3xl md:text-4xl font-serif text-[#F4A300] mb-3">{stat.value}</div>
+                <div className="text-[11px] uppercase tracking-[0.4em] text-[#ffffff] font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </div>

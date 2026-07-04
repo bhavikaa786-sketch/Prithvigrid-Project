@@ -53,7 +53,7 @@ const Portfolio = () => {
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <section id="projects" className="py-24 bg-brand-black relative">
+    <section id="projects" className="py-24 bg-[#ffffff] relative">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-8">
           <div>

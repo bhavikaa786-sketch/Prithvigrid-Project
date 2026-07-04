@@ -10,7 +10,7 @@ const About = () => {
   });
 
   return (
-    <section id="about" className="py-24 bg-brand-black relative">
+    <section id="about" className="py-24 bg-[#ffffff] relative">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           

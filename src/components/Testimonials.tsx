@@ -38,7 +38,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-24 bg-brand-dark relative overflow-hidden">
+    <section className="py-24 bg-[#ffffff] relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)', backgroundSize: '40px 40px' }} />
 

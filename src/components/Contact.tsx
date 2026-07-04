@@ -2,7 +2,7 @@ import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 bg-brand-dark relative overflow-hidden">
+    <section id="contact" className="py-24 bg-[#ffffff] relative overflow-hidden">
       {/* Decorative gradient */}
       <div className="absolute bottom-0 left-0 w-full h-[500px] bg-brand-accent/5 rounded-[100%] blur-[120px] translate-y-1/2 pointer-events-none" />
 
