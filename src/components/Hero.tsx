@@ -53,13 +53,13 @@ const Hero = () => {
           >
             <Link
               to="/projects"
-              className="px-10 py-4 border border-brand-white text-[11px] uppercase tracking-[0.2em] hover:bg-brand-white hover:text-brand-black transition-all duration-500 font-medium"
+              className="px-10 py-4 bg-[var(--background)] text-[var(--foreground)] border border-[var(--background)] text-[11px] uppercase tracking-[0.2em] hover:bg-[var(--foreground)] hover:text-[var(--background)] hover:border-[var(--foreground)] transition-all duration-500 font-medium"
             >
               Our Portfolio
             </Link>
             <Link
               to="/process"
-              className="group flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-white hover:text-brand-gold transition-colors duration-300"
+              className="px-10 py-4 bg-[var(--background)] text-[var(--foreground)] border border-[var(--background)] text-[11px] uppercase tracking-[0.2em] hover:bg-[var(--foreground)] hover:text-[var(--background)] hover:border-[var(--foreground)] transition-all duration-500 font-medium inline-flex items-center gap-3 group"
             >
               The Process
               <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-300" />
