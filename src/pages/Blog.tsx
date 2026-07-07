@@ -141,7 +141,7 @@ const Blog = () => {
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
           <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
             <span className="text-[#F4A300] text-[10px] uppercase tracking-[0.4em] mb-4 block font-semibold">Stay Inspired</span>
-            <h2 className="text-white text-3xl md:text-4xl font-serif uppercase tracking-wider mb-4">
+            <h2 className="text-[var(--background)] text-3xl md:text-4xl font-serif uppercase tracking-wider mb-4">
               Join Our Editorial List
             </h2>
             <p className="text-gray-200 text-sm font-light leading-relaxed mb-8 max-w-md">

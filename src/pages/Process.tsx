@@ -28,7 +28,7 @@ const Process = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-serif text-white uppercase tracking-wider"
+            className="text-5xl md:text-7xl lg:text-8xl font-serif text-[#ffffff] uppercase tracking-wider"
           >
             The Path to <span className="italic text-[#F4A300] lowercase font-normal">excellence</span>
           </motion.h1>
