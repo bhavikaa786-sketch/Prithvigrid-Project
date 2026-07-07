@@ -1,23 +1,24 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 
 /* ─── Shared animation variants ─── */
-const sectionVariants = {
+const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 70 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
   },
 };
 
-const childVariants = {
+const childVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: (delay: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1], delay },
+    transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay },
   }),
 };
 

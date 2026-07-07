@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from '../assets/prithvilogo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,17 +34,19 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out bg-[#ffffff] border-b-[4px] border-[#F4A300] ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out bg-[#ffffff] border-b-[4px] border-[#F4A300] ${isScrolled
           ? 'py-2 shadow-sm'
           : 'py-4'
-      }`}
+        }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="text-xl font-bold tracking-[0.2em] text-[#000000] flex items-center gap-3 uppercase group">
-          <span className="font-serif italic text-[#F4A300] group-hover:text-[#000000] transition-colors duration-500">P</span>
-          <span className="hidden sm:inline font-light">PrithviGrid</span>
+        <Link to="/" className="flex items-center">
+          <img
+            src={logo}
+            alt="PrithviGrid Construction Logo"
+            className={`transition-all duration-500 object-contain ${isScrolled ? 'h-16' : 'h-20'}`}
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -52,9 +55,8 @@ const Navbar = () => {
             <Link
               key={link.name}
               to={link.path}
-              className={`text-[11px] uppercase tracking-[0.2em] transition-all duration-300 hover:text-[#F4A300] ${
-                location.pathname === link.path ? 'text-[#F4A300]' : 'text-[#000000]'
-              }`}
+              className={`text-[11px] uppercase tracking-[0.2em] transition-all duration-300 hover:text-[#F4A300] ${location.pathname === link.path ? 'text-[#F4A300]' : 'text-[#000000]'
+                }`}
             >
               {link.name}
             </Link>
@@ -94,7 +96,7 @@ const Navbar = () => {
             >
               <X size={32} />
             </button>
-            
+
             <Link to="/" className="text-sm tracking-[0.3em] uppercase text-brand-gold mb-12">PrithviGrid</Link>
 
             {navLinks.map((link) => (

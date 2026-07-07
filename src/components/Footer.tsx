@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import logo from '../assets/prithvilogo.png';
 
 const Footer = () => {
   return (
@@ -7,9 +8,11 @@ const Footer = () => {
         {/* Top: Centered Logo & Brand Header */}
         <div className="flex flex-col items-center text-center mb-12">
           <Link to="/" className="flex flex-col items-center">
-            <span className="text-2xl md:text-3xl font-light tracking-[0.3em] text-[#000000] uppercase font-sans">
-              PrithviGrid
-            </span>
+            <img
+              src={logo}
+              alt="PrithviGrid Construction Logo"
+              className="h-44 object-contain"
+            />
           </Link>
         </div>
 
@@ -18,7 +21,7 @@ const Footer = () => {
 
         {/* Bottom: Information Grid */}
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 text-left">
-          
+
           {/* Column 1: Contact Us & Address */}
           <div className="space-y-10">
             <div>
@@ -32,7 +35,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="text-[13px] uppercase tracking-[0.25em] text-[#000000] mb-4 font-semibold">Address</h4>
               <p className="text-sm text-brand-concrete uppercase tracking-wide font-light leading-relaxed">
@@ -63,15 +66,15 @@ const Footer = () => {
           {/* Column 3: Find Us (Map) */}
           <div>
             <h4 className="text-[13px] uppercase tracking-[0.25em] text-[#000000] mb-4 font-semibold">Find Us</h4>
-            <a 
-              href="https://www.google.com/maps/search/?api=1&query=The+Landmark+Building+Connaught+Place+New+Delhi" 
-              target="_blank" 
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=The+Landmark+Building+Connaught+Place+New+Delhi"
+              target="_blank"
               rel="noopener noreferrer"
               className="block relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-gray-200/50 shadow-md group mt-2"
             >
-              <img 
-                src="/map_preview.png" 
-                alt="Connaught Place Map Preview" 
+              <img
+                src="/map_preview.png"
+                alt="Connaught Place Map Preview"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-[#0B3C5D]/10 group-hover:bg-[#0B3C5D]/20 transition-colors flex items-center justify-center">
