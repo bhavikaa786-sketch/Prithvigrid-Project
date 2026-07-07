@@ -119,11 +119,30 @@ const About = () => {
                   transition={{ duration: 1, delay: i * 0.2, ease: "easeOut" }}
                   viewport={{ once: true }}
                   onClick={() => toggleGlow(value.title)}
-                  className={`p-10 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-xl transition-all duration-500 cursor-pointer ${
-                    isClicked
-                      ? '-translate-y-2 shadow-[0_0_20px_rgba(244,163,0,0.4)] border-[#F4A300]/40'
-                      : 'md:hover:-translate-y-2 md:hover:shadow-[0_0_20px_rgba(244,163,0,0.4)]'
-                  }`}
+                  className="p-10 rounded-2xl bg-white/5 backdrop-blur-sm transition-all duration-500 cursor-pointer"
+                  style={{
+                    border: isClicked ? '1px solid rgba(244,163,0,0.5)' : '1px solid rgba(255,255,255,0.1)',
+                    boxShadow: isClicked
+                      ? '0 0 28px 6px rgba(244,163,0,0.45), 0 8px 32px rgba(0,0,0,0.3)'
+                      : '0 8px 24px rgba(0,0,0,0.2)',
+                    transform: isClicked ? 'translateY(-8px)' : 'translateY(0)',
+                  }}
+                  onMouseEnter={e => {
+                    if (window.innerWidth >= 768 && !isClicked) {
+                      const el = e.currentTarget as HTMLDivElement;
+                      el.style.boxShadow = '0 0 28px 6px rgba(244,163,0,0.45), 0 8px 32px rgba(0,0,0,0.3)';
+                      el.style.transform = 'translateY(-8px)';
+                      el.style.border = '1px solid rgba(244,163,0,0.5)';
+                    }
+                  }}
+                  onMouseLeave={e => {
+                    if (window.innerWidth >= 768 && !isClicked) {
+                      const el = e.currentTarget as HTMLDivElement;
+                      el.style.boxShadow = '0 8px 24px rgba(0,0,0,0.2)';
+                      el.style.transform = 'translateY(0)';
+                      el.style.border = '1px solid rgba(255,255,255,0.1)';
+                    }
+                  }}
                 >
                   <h3 className="text-2xl mb-6 font-bold" style={{ color: '#F4A300' }}>{value.title}</h3>
                   <p className="leading-relaxed font-light" style={{ color: '#ffffff' }}>{value.desc}</p>

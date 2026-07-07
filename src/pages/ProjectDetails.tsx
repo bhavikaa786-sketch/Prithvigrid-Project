@@ -144,11 +144,15 @@ const ProjectDetails = () => {
 
   const [isBoxClicked, setIsBoxClicked] = useState(false);
   const [isNextClicked, setIsNextClicked] = useState(false);
+  const [isGallery1Colored, setIsGallery1Colored] = useState(false);
+  const [isGallery2Colored, setIsGallery2Colored] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     setIsBoxClicked(false);
     setIsNextClicked(false);
+    setIsGallery1Colored(false);
+    setIsGallery2Colored(false);
   }, [projectId]);
 
   const handleNextClick = (e: React.MouseEvent) => {
@@ -334,31 +338,37 @@ const ProjectDetails = () => {
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <motion.div
-              className="aspect-square overflow-hidden rounded-2xl"
+              className="aspect-square overflow-hidden rounded-2xl cursor-pointer"
               custom={0}
               variants={childVariants}
               initial="hidden"
               whileInView="visible"
               viewport={viewportOpts}
+              onClick={() => setIsGallery1Colored(prev => !prev)}
             >
               <img
                 src={project.gallery1}
                 alt="Detail 1"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                className={`w-full h-full object-cover transition-all duration-1000 md:hover:grayscale-0 ${
+                  isGallery1Colored ? 'grayscale-0' : 'grayscale'
+                }`}
               />
             </motion.div>
             <motion.div
-              className="aspect-square overflow-hidden rounded-2xl mt-24"
+              className="aspect-square overflow-hidden rounded-2xl mt-24 cursor-pointer"
               custom={0.2}
               variants={childVariants}
               initial="hidden"
               whileInView="visible"
               viewport={viewportOpts}
+              onClick={() => setIsGallery2Colored(prev => !prev)}
             >
               <img
                 src={project.gallery2}
                 alt="Detail 2"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                className={`w-full h-full object-cover transition-all duration-1000 md:hover:grayscale-0 ${
+                  isGallery2Colored ? 'grayscale-0' : 'grayscale'
+                }`}
               />
             </motion.div>
           </div>
