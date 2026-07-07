@@ -1,4 +1,5 @@
-import { useParams, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
@@ -141,6 +142,23 @@ const ProjectDetails = () => {
   const projectId = parseInt(id || '1', 10);
   const project = projectsData.find(p => p.id === projectId) || projectsData[0];
 
+  const [isBoxClicked, setIsBoxClicked] = useState(false);
+  const [isNextClicked, setIsNextClicked] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setIsBoxClicked(false);
+    setIsNextClicked(false);
+  }, [projectId]);
+
+  const handleNextClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsNextClicked(true);
+    setTimeout(() => {
+      navigate(`/projects/${project.nextId}`);
+    }, 600); // 600ms transition time
+  };
+
   const titleParts = project.title.split(' ');
   const titleStart = titleParts.slice(0, titleParts.length - 1).join(' ');
 
@@ -252,10 +270,13 @@ const ProjectDetails = () => {
 
             {/* Right — info block */}
             <motion.div
-              className="lg:col-span-4 pl-12 py-12 rounded-2xl transition-all duration-500"
+              onClick={() => setIsBoxClicked(!isBoxClicked)}
+              className="lg:col-span-4 pl-12 py-12 rounded-2xl transition-all duration-500 cursor-pointer"
               style={{
                 backgroundColor: '#0B3C5D',
-                boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+                boxShadow: isBoxClicked
+                  ? '0 0 40px 8px rgba(244,163,0,0.45), 0 8px 32px rgba(0,0,0,0.25)'
+                  : '0 8px 32px rgba(0,0,0,0.25)',
               }}
               custom={0.2}
               variants={childVariants}
@@ -263,12 +284,16 @@ const ProjectDetails = () => {
               whileInView="visible"
               viewport={viewportOpts}
               onMouseEnter={e => {
-                (e.currentTarget as HTMLDivElement).style.boxShadow =
-                  '0 0 40px 8px rgba(244,163,0,0.45), 0 8px 32px rgba(0,0,0,0.25)';
+                if (!isBoxClicked) {
+                  (e.currentTarget as HTMLDivElement).style.boxShadow =
+                    '0 0 40px 8px rgba(244,163,0,0.45), 0 8px 32px rgba(0,0,0,0.25)';
+                }
               }}
               onMouseLeave={e => {
-                (e.currentTarget as HTMLDivElement).style.boxShadow =
-                  '0 8px 32px rgba(0,0,0,0.25)';
+                if (!isBoxClicked) {
+                  (e.currentTarget as HTMLDivElement).style.boxShadow =
+                    '0 8px 32px rgba(0,0,0,0.25)';
+                }
               }}
             >
               <div className="space-y-12">
@@ -350,41 +375,56 @@ const ProjectDetails = () => {
         viewport={viewportOpts}
       >
         <div className="container mx-auto px-6 text-center">
-          <motion.span
-            className="text-[10px] uppercase tracking-[0.4em] text-brand-gold mb-8 block"
-            custom={0}
-            variants={childVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportOpts}
-          >
-            Next Project
-          </motion.span>
-          <Link to={`/projects/${project.nextId}`} className="group inline-block">
-            <motion.h2
-              className="text-6xl md:text-8xl font-serif italic transition-colors duration-500"
-              style={{ color: '#0B3C5D' }}
-              custom={0.15}
-              variants={childVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={viewportOpts}
-              onMouseEnter={e => { (e.currentTarget as HTMLHeadingElement).style.color = '#F4A300'; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLHeadingElement).style.color = '#F4A300'; }}
-            >
-              {project.nextTitle}
-            </motion.h2>
-            <motion.div
-              className="mt-12 flex justify-center items-center gap-4 text-[#0B3C5D] group-hover:text-[#F4A300] transition-colors uppercase tracking-[0.2em] text-[11px]"
-              custom={0.28}
-              variants={childVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={viewportOpts}
-            >
-              View Project <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
-            </motion.div>
-          </Link>
+          {project.id < 6 ? (
+            <>
+              <motion.span
+                className="text-[10px] uppercase tracking-[0.4em] text-brand-gold mb-8 block"
+                custom={0}
+                variants={childVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportOpts}
+              >
+                Next Project
+              </motion.span>
+              <div onClick={handleNextClick} className="group inline-block cursor-pointer">
+                <motion.h2
+                  className="text-6xl md:text-8xl font-serif italic transition-colors duration-500 hover:text-[#F4A300]"
+                  style={{ color: isNextClicked ? '#F4A300' : '#0B3C5D' }}
+                  custom={0.15}
+                  variants={childVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={viewportOpts}
+                >
+                  {project.nextTitle}
+                </motion.h2>
+                <motion.div
+                  className="mt-12 flex justify-center items-center gap-4 transition-colors uppercase tracking-[0.2em] text-[11px] hover:text-[#F4A300]"
+                  style={{ color: isNextClicked ? '#F4A300' : '#0B3C5D' }}
+                  custom={0.28}
+                  variants={childVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={viewportOpts}
+                >
+                  View Project <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+                </motion.div>
+              </div>
+            </>
+          ) : (
+            <div className="text-gray-400">
+              <span className="text-[10px] uppercase tracking-[0.4em] text-brand-gold mb-8 block">
+                Portfolio End
+              </span>
+              <h2 className="text-6xl md:text-8xl font-serif italic text-[#0B3C5D] mb-12">
+                Final Project
+              </h2>
+              <Link to="/projects" className="inline-block px-10 py-4 border border-[#0B3C5D] text-[#0B3C5D] text-[11px] uppercase tracking-[0.2em] hover:bg-[#0B3C5D] hover:text-white transition-all duration-500 font-medium">
+                Back to Projects
+              </Link>
+            </div>
+          )}
         </div>
       </motion.section>
 

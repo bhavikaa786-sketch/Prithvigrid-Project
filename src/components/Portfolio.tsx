@@ -97,26 +97,28 @@ const Portfolio = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`group relative overflow-hidden rounded-sm ${project.span}`}
               >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-brand-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <span className="text-brand-accent text-xs font-medium uppercase tracking-wider mb-2 block">
-                      {project.category}
-                    </span>
-                    <h3 className="text-2xl font-bold text-white flex items-center justify-between">
-                      {project.title}
-                      <span className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-md">
-                        <ArrowUpRight size={20} />
+                <Link to={`/projects/${project.id}`} className="block w-full h-full relative">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-brand-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                    <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      <span className="text-brand-accent text-xs font-medium uppercase tracking-wider mb-2 block">
+                        {project.category}
                       </span>
-                    </h3>
+                      <h3 className="text-2xl font-bold text-white flex items-center justify-between">
+                        {project.title}
+                        <span className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-md">
+                          <ArrowUpRight size={20} />
+                        </span>
+                      </h3>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </motion.div>
             ))}
           </AnimatePresence>

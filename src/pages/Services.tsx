@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const services = [
@@ -59,6 +60,15 @@ const SectionWrapper = ({ children, className = "" }: { children: React.ReactNod
 );
 
 const Services = () => {
+  const [clickedExpertise, setClickedExpertise] = useState<Record<number, boolean>>({});
+
+  const toggleExpertise = (index: number) => {
+    setClickedExpertise(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
   return (
     <div className="w-full">
       {/* Hero Section */}
@@ -135,30 +145,50 @@ const Services = () => {
           </SectionWrapper>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {expertiseAreas.map((area, i) => (
-              <SectionWrapper key={i}>
-                <div className="group relative h-[500px] rounded-lg overflow-hidden cursor-pointer shadow-lg bg-gray-900">
-                  {/* Background Image */}
-                  <img src={area.image} alt={area.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" />
-                  
-                  {/* Expandable Box */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-[#0B3C5D] text-white transform transition-transform duration-500 translate-y-[calc(100%-80px)] group-hover:translate-y-0">
-                    <div className="h-[80px] flex items-center px-6">
-                      <h3 className="text-xl font-medium text-[#F4A300]">{area.title}</h3>
-                    </div>
-                    <div className="px-6 pb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                      <p className="text-sm text-gray-200 mb-6 leading-relaxed">
-                        {area.desc}
-                      </p>
-                      <button className="text-[11px] uppercase tracking-[0.1em] font-semibold flex items-center text-[#F4A300] transition-colors">
-                        Learn more about our {area.title.toLowerCase()}
-                        <span className="ml-2 text-lg leading-none">→</span>
-                      </button>
+            {expertiseAreas.map((area, i) => {
+              const isExpanded = !!clickedExpertise[i];
+              return (
+                <SectionWrapper key={i}>
+                  <div 
+                    onClick={() => toggleExpertise(i)}
+                    className="group relative h-[500px] rounded-lg overflow-hidden cursor-pointer shadow-lg bg-gray-900"
+                  >
+                    {/* Background Image */}
+                    <img 
+                      src={area.image} 
+                      alt={area.title} 
+                      className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 opacity-90 group-hover:opacity-100 ${
+                        isExpanded ? 'scale-110 opacity-100' : 'group-hover:scale-110'
+                      }`} 
+                    />
+                    
+                    {/* Expandable Box */}
+                    <div 
+                      className={`absolute bottom-0 left-0 right-0 bg-[#0B3C5D] text-white transform transition-transform duration-500 ${
+                        isExpanded ? 'translate-y-0' : 'translate-y-[calc(100%-80px)] group-hover:translate-y-0'
+                      }`}
+                    >
+                      <div className="h-[80px] flex items-center px-6">
+                        <h3 className="text-xl font-medium text-[#F4A300]">{area.title}</h3>
+                      </div>
+                      <div 
+                        className={`px-6 pb-6 transition-opacity duration-700 ${
+                          isExpanded ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                        }`}
+                      >
+                        <p className="text-sm text-gray-200 mb-6 leading-relaxed">
+                          {area.desc}
+                        </p>
+                        <button className="text-[11px] uppercase tracking-[0.1em] font-semibold flex items-center text-[#F4A300] transition-colors">
+                          Learn more about our {area.title.toLowerCase()}
+                          <span className="ml-2 text-lg leading-none">→</span>
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </SectionWrapper>
-            ))}
+                </SectionWrapper>
+              );
+            })}
           </div>
         </div>
       </section>

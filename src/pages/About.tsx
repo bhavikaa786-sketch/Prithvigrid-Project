@@ -1,6 +1,16 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const About = () => {
+  const [clickedBoxes, setClickedBoxes] = useState<Record<string, boolean>>({});
+
+  const toggleGlow = (title: string) => {
+    setClickedBoxes(prev => ({
+      ...prev,
+      [title]: !prev[title]
+    }));
+  };
+
   return (
     <div className="bg-brand-black w-full overflow-hidden">
       {/* Header */}
@@ -99,19 +109,27 @@ const About = () => {
               { title: 'Performance', desc: 'We build for generations, not just for the moment. Our materials and methods are chosen for their enduring quality.' },
               { title: 'Clarity', desc: 'Design should be intuitive and honest. We strip away the unnecessary to reveal the essential beauty of space.' },
               { title: 'Mastery', desc: 'Our craftsmen are artisans of the trade. Every joint, every pour, and every finish is executed with surgical precision.' }
-            ].map((value, i) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: i * 0.2, ease: "easeOut" }}
-                viewport={{ once: true }}
-                className="p-10 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-xl hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(244,163,0,0.4)] transition-all duration-500"
-              >
-                <h3 className="text-2xl mb-6 font-bold" style={{ color: '#F4A300' }}>{value.title}</h3>
-                <p className="leading-relaxed font-light" style={{ color: '#ffffff' }}>{value.desc}</p>
-              </motion.div>
-            ))}
+            ].map((value, i) => {
+              const isClicked = !!clickedBoxes[value.title];
+              return (
+                <motion.div
+                  key={value.title}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: i * 0.2, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                  onClick={() => toggleGlow(value.title)}
+                  className={`p-10 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-xl transition-all duration-500 cursor-pointer ${
+                    isClicked
+                      ? '-translate-y-2 shadow-[0_0_20px_rgba(244,163,0,0.4)] border-[#F4A300]/40'
+                      : 'hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(244,163,0,0.4)]'
+                  }`}
+                >
+                  <h3 className="text-2xl mb-6 font-bold" style={{ color: '#F4A300' }}>{value.title}</h3>
+                  <p className="leading-relaxed font-light" style={{ color: '#ffffff' }}>{value.desc}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

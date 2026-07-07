@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const projects = [
@@ -39,6 +40,25 @@ const projects = [
   }
 ];
 
+const getProjectId = (id: string) => {
+  switch (id) {
+    case 'the-glass-pavilion':
+      return 1;
+    case 'zenith-villa':
+      return 2;
+    case 'lumina-residences':
+      return 3;
+    case 'aura-tower':
+      return 4;
+    case 'horizon-estate':
+      return 5;
+    case 'urban-oasis':
+      return 6;
+    default:
+      return 1;
+  }
+};
+
 const ProjectPreview = () => {
   return (
     <section className="py-32 bg-[#ffffff] overflow-hidden">
@@ -59,9 +79,10 @@ const ProjectPreview = () => {
           transition={{ duration: 45, ease: "linear", repeat: Infinity }}
         >
           {[...projects, ...projects].map((project, i) => (
-            <div
+            <Link
               key={i}
-              className="w-[300px] md:w-[350px] lg:w-[400px] shrink-0 bg-[#ffffff] rounded-2xl overflow-hidden shadow-2xl flex flex-col h-full group"
+              to={`/projects/${getProjectId(project.id)}`}
+              className="w-[300px] md:w-[350px] lg:w-[400px] shrink-0 bg-[#ffffff] rounded-2xl overflow-hidden shadow-2xl flex flex-col h-full group cursor-pointer hover:shadow-[0_0_30px_rgba(244,163,0,0.25)] transition-all duration-500"
             >
               <div className="h-56 sm:h-64 w-full overflow-hidden">
                 <img 
@@ -74,7 +95,7 @@ const ProjectPreview = () => {
                 <h3 className="text-[#000000] font-bold text-[13px] uppercase tracking-wider mb-4">{project.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed font-light">{project.desc}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </motion.div>
       </div>
