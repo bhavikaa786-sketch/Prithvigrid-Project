@@ -122,7 +122,7 @@ const About = () => {
                   className={`p-10 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-xl transition-all duration-500 cursor-pointer ${
                     isClicked
                       ? '-translate-y-2 shadow-[0_0_20px_rgba(244,163,0,0.4)] border-[#F4A300]/40'
-                      : 'hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(244,163,0,0.4)]'
+                      : 'md:hover:-translate-y-2 md:hover:shadow-[0_0_20px_rgba(244,163,0,0.4)]'
                   }`}
                 >
                   <h3 className="text-2xl mb-6 font-bold" style={{ color: '#F4A300' }}>{value.title}</h3>

@@ -110,13 +110,13 @@ const Projects = () => {
                       <img 
                         src={project.image} 
                         alt={project.title} 
-                        className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110" 
+                        className="w-full h-full object-cover transition-all duration-1000 md:group-hover:scale-110" 
                       />
                       {/* Default state: lighter #0B3C5D overlay highlighting image */}
-                      <div className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-0" style={{ backgroundColor: '#0B3C5D', opacity: 0.35 }}></div>
+                      <div className="absolute inset-0 transition-opacity duration-500 opacity-0 md:opacity-35 md:group-hover:opacity-0 bg-[#0B3C5D]"></div>
                       
-                      {/* Hover state: text and dark gradient to make text visible */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-12">
+                      {/* Hover/Touch state: text and dark gradient to make text visible */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-12">
                         <span className="text-[10px] uppercase tracking-[0.3em] text-[#F4A300] mb-4">{project.category}</span>
                         <h3 className="text-4xl font-serif text-white">{project.title}</h3>
                       </div>

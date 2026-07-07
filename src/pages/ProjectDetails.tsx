@@ -284,13 +284,13 @@ const ProjectDetails = () => {
               whileInView="visible"
               viewport={viewportOpts}
               onMouseEnter={e => {
-                if (!isBoxClicked) {
+                if (window.innerWidth >= 768 && !isBoxClicked) {
                   (e.currentTarget as HTMLDivElement).style.boxShadow =
                     '0 0 40px 8px rgba(244,163,0,0.45), 0 8px 32px rgba(0,0,0,0.25)';
                 }
               }}
               onMouseLeave={e => {
-                if (!isBoxClicked) {
+                if (window.innerWidth >= 768 && !isBoxClicked) {
                   (e.currentTarget as HTMLDivElement).style.boxShadow =
                     '0 8px 32px rgba(0,0,0,0.25)';
                 }

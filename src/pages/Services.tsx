@@ -157,15 +157,15 @@ const Services = () => {
                     <img 
                       src={area.image} 
                       alt={area.title} 
-                      className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 opacity-90 group-hover:opacity-100 ${
-                        isExpanded ? 'scale-110 opacity-100' : 'group-hover:scale-110'
+                      className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 opacity-90 md:group-hover:opacity-100 ${
+                        isExpanded ? 'scale-110 opacity-100' : 'md:group-hover:scale-110'
                       }`} 
                     />
                     
                     {/* Expandable Box */}
                     <div 
                       className={`absolute bottom-0 left-0 right-0 bg-[#0B3C5D] text-white transform transition-transform duration-500 ${
-                        isExpanded ? 'translate-y-0' : 'translate-y-[calc(100%-80px)] group-hover:translate-y-0'
+                        isExpanded ? 'translate-y-0' : 'translate-y-[calc(100%-80px)] md:group-hover:translate-y-0'
                       }`}
                     >
                       <div className="h-[80px] flex items-center px-6">
@@ -173,7 +173,7 @@ const Services = () => {
                       </div>
                       <div 
                         className={`px-6 pb-6 transition-opacity duration-700 ${
-                          isExpanded ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                          isExpanded ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'
                         }`}
                       >
                         <p className="text-sm text-gray-200 mb-6 leading-relaxed">
