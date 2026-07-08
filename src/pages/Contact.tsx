@@ -1,7 +1,92 @@
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+  
+  console.log('serviceId:', import.meta.env.VITE_EMAILJS_SERVICE_ID);
+  console.log('templateId:', import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+  console.log('publicKey:', import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
+  const [formData, setFormData] = useState({
+    from_name: '',
+    from_email: '',
+    project_type: '',
+    message: '',
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!formData.from_name || !formData.from_email || !formData.project_type || !formData.message) {
+      alert('Please fill out all fields before sending your inquiry.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey || serviceId === 'your_service_id') {
+      console.warn('EmailJS keys not configured. Simulating successful send in development.');
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setSubmitStatus('success');
+        setFormData({
+          from_name: '',
+          from_email: '',
+          project_type: '',
+          message: '',
+        });
+      }, 1500);
+      return;
+    }
+
+    try {
+      const response = await emailjs.sendForm(
+        serviceId,
+        templateId,
+        formRef.current!,
+        publicKey
+      );
+
+      if (response.status === 200) {
+        setSubmitStatus('success');
+        setFormData({
+          from_name: '',
+          from_email: '',
+          project_type: '',
+          message: '',
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="bg-[var(--background)] min-h-screen pt-40 pb-32">
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
@@ -36,12 +121,16 @@ const Contact = () => {
             animate={{ opacity: 1, x: 0 }}
             className="lg:col-span-7 bg-[#ffffff] rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100/50 flex flex-col justify-between"
           >
-            <form className="space-y-10" onSubmit={(e) => e.preventDefault()}>
+            <form ref={formRef} className="space-y-10" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div className="space-y-3">
                   <label className="text-[10px] uppercase tracking-[0.2em] text-[#A87B51] font-bold">Full Name</label>
                   <input 
                     type="text" 
+                    name="from_name"
+                    value={formData.from_name}
+                    onChange={handleChange}
+                    required
                     className="w-full bg-transparent border-b border-gray-200 text-[#1C1A17] py-3 focus:outline-none focus:border-[#A87B51] transition-colors font-light text-lg"
                     placeholder="Enter your name"
                   />
@@ -50,6 +139,10 @@ const Contact = () => {
                   <label className="text-[10px] uppercase tracking-[0.2em] text-[#A87B51] font-bold">Email Address</label>
                   <input 
                     type="email" 
+                    name="from_email"
+                    value={formData.from_email}
+                    onChange={handleChange}
+                    required
                     className="w-full bg-transparent border-b border-gray-200 text-[#1C1A17] py-3 focus:outline-none focus:border-[#A87B51] transition-colors font-light text-lg"
                     placeholder="Enter your email"
                   />
@@ -59,8 +152,14 @@ const Contact = () => {
               <div className="space-y-3">
                 <label className="text-[10px] uppercase tracking-[0.2em] text-[#A87B51] font-bold">Project Type</label>
                 <div className="relative">
-                  <select className="w-full bg-transparent border-b border-gray-200 text-[#1C1A17] py-3 focus:outline-none focus:border-[#A87B51] transition-colors font-light text-lg appearance-none cursor-pointer">
-                    <option value="" disabled selected className="bg-[#ffffff] text-gray-400">Select a service</option>
+                  <select 
+                    name="project_type"
+                    value={formData.project_type}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-transparent border-b border-gray-200 text-[#1C1A17] py-3 focus:outline-none focus:border-[#A87B51] transition-colors font-light text-lg appearance-none cursor-pointer"
+                  >
+                    <option value="" disabled className="bg-[#ffffff] text-gray-400">Select a service</option>
                     <option value="residential" className="bg-[#ffffff] text-[#1C1A17]">Residential Construction</option>
                     <option value="renovation" className="bg-[#ffffff] text-[#1C1A17]">Luxury Renovation</option>
                     <option value="interior" className="bg-[#ffffff] text-[#1C1A17]">Interior Architecture</option>
@@ -76,16 +175,43 @@ const Contact = () => {
                 <label className="text-[10px] uppercase tracking-[0.2em] text-[#A87B51] font-bold">Project Vision</label>
                 <textarea 
                   rows={4}
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   className="w-full bg-transparent border-b border-gray-200 text-[#1C1A17] py-3 focus:outline-none focus:border-[#A87B51] transition-colors font-light text-lg resize-none"
                   placeholder="Tell us about your project legacy..."
                 ></textarea>
               </div>
 
+              {submitStatus === 'success' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-5 bg-[#fbfbfa] border border-[#A87B51]/20 rounded-2xl text-sm text-[#1C1A17] font-light leading-relaxed"
+                >
+                  <span className="font-serif text-[#A87B51] font-bold block mb-1 uppercase tracking-wider text-xs">Inquiry Sent Successfully</span>
+                  Thank you. Our curators will review your vision and connect with you shortly.
+                </motion.div>
+              )}
+
+              {submitStatus === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-5 bg-[#fdfafb] border border-red-200 rounded-2xl text-sm text-red-800 font-light leading-relaxed"
+                >
+                  <span className="font-serif text-red-900 font-bold block mb-1 uppercase tracking-wider text-xs">Unable to Send Message</span>
+                  An error occurred while sending. Please try again or write to us at <a href="mailto:hello@prithvigrid.com" className="underline font-normal">hello@prithvigrid.com</a>.
+                </motion.div>
+              )}
+
               <button 
                 type="submit"
-                className="group px-10 py-4 bg-[var(--foreground)] text-[var(--background)] border border-[var(--foreground)] text-[11px] uppercase tracking-[0.2em] hover:bg-transparent hover:text-[var(--foreground)] transition-all duration-500 font-medium inline-flex items-center gap-4"
+                disabled={isSubmitting}
+                className="group px-10 py-4 bg-[var(--foreground)] text-[var(--background)] border border-[var(--foreground)] text-[11px] uppercase tracking-[0.2em] hover:bg-transparent hover:text-[var(--foreground)] transition-all duration-500 font-medium inline-flex items-center gap-4 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Inquiry
+                {isSubmitting ? 'Sending Inquiry...' : 'Send Inquiry'}
                 <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-300" />
               </button>
             </form>
