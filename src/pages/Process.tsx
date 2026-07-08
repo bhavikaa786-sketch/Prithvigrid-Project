@@ -2,11 +2,11 @@ import { motion } from 'framer-motion';
 import { MessageSquare, Compass, Layers, Building2, CheckCircle2 } from 'lucide-react';
 
 const steps = [
-  { num: '01', icon: MessageSquare, title: 'Consultation', desc: 'Understanding your vision and the site’s potential. We discuss the interplay of light, landscape, and legacy.' },
-  { num: '02', icon: Compass, title: 'Concept Design', desc: 'Architectural sketching and conceptual planning. We establish the structural rhythm and material palette.' },
-  { num: '03', icon: Layers, title: 'Technical Planning', desc: 'Surgical precision in engineering. Every joint and surface is planned to ensure structural honesty.' },
-  { num: '04', icon: Building2, title: 'Construction', desc: 'Our master builders bring the vision to life, utilizing hand-poured concrete and precision-milled materials.' },
-  { num: '05', icon: CheckCircle2, title: 'Finishing', desc: 'The refinement phase. We meticulously curate every surface to ensure an atmosphere of quiet luxury.' }
+  { num: '01', icon: MessageSquare, title: 'Estimation & Booking', desc: 'Select your package specifications, request detailed floor layout requirements, and secure your slot with transparent booking.' },
+  { num: '02', icon: Compass, title: '3D Design & Soil Test', desc: 'Our architects construct tailored Vastu floor plans, execute site soil checks, and finalize the structural blueprints.' },
+  { num: '03', icon: Layers, title: 'Escrow Setup & Schedule', desc: 'Secure project funds in a milestone escrow account and receive a micro-scheduled construction timeline.' },
+  { num: '04', icon: Building2, title: 'Execution & QA Checks', desc: 'Watch your house rise with daily logs and 310+ QA checks conducted by independent engineers at every major gate.' },
+  { num: '05', icon: CheckCircle2, title: 'Handover & Warranty', desc: 'Receive the keys to your dream home, complete with comprehensive occupancy checks and a structural warranty certificate.' }
 ];
 
 const Process = () => {

@@ -3,34 +3,34 @@ import { TestimonialsCard, type TestimonialItem } from '@/components/ui/testimon
 
 const testimonials: TestimonialItem[] = [
   {
-    name: "The Sinclair Family",
-    role: "Malibu, California",
-    text: "Building with PrithviGrid was a journey of discovery. They didn't just build our home; they understood the legacy we wanted to leave for our children.",
-    avatar: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" // Modern glass pavilion villa
+    name: "The Sharma Family",
+    role: "Whitefield, Bangalore",
+    text: "Building our dream villa with PrithviGrid was an absolute pleasure. Their milestone-based escrow system meant zero risk for us, and the structural quality exceeded all expectations.",
+    avatar: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
   },
   {
-    name: "Marcus Chen",
-    role: "London, UK",
-    text: "Their mastery of materials is unmatched. The way they handle raw concrete and timber is truly surgical. The atmosphere in our office now is one of quiet power.",
-    avatar: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" // Raw concrete/steel commercial tower
+    name: "Amit Verma",
+    role: "Sector 15, Noida",
+    text: "Their QASCON quality checking framework is incredibly rigorous. The engineering team caught minor waterproofing issues early and rectified them immediately. Very professional.",
+    avatar: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
   },
   {
-    name: "Sarah Jenkins",
-    role: "CEO, Elevate Tech",
-    text: "PrithviGrid transformed our outdated commercial space into a modern, functional masterpiece. Their attention to detail and commitment to the timeline was unprecedented.",
-    avatar: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" // Urban concrete/botanical design space
+    name: "Sneha Reddy",
+    role: "Founder, Zenith Studios, Hyderabad",
+    text: "PrithviGrid constructed our commercial tech workspace block. What blew me away was their absolute budget predictability—zero cost overrun and completed exactly on schedule.",
+    avatar: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
   },
   {
-    name: "David & Emma Thompson",
-    role: "Homeowners",
-    text: "Building our custom luxury home with PrithviGrid was a seamless experience. They understood our vision perfectly and executed it with precision and premium craftsmanship.",
-    avatar: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" // Premium glass/pool residential estate
+    name: "Vikram & Anjali Sen",
+    role: "DLF Phase 5, Gurgaon",
+    text: "The customer dashboard app made our house construction so easy. We received daily photo logs and material reports, meaning we barely had to visit the dusty site ourselves.",
+    avatar: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
   },
   {
-    name: "Michael Chen",
-    role: "Principal Architect, Chen Designs",
-    text: "The architectural insight and construction quality provided by their team is unmatched in the industry. They don't just build; they create art.",
-    avatar: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" // Luxury hillside villa
+    name: "Dr. Rajesh K.",
+    role: "Baner, Pune",
+    text: "The combination of Vastu-compliant spacing, structural design stability checks, and 10-year warranty certificate made PrithviGrid the best decision for our combined clinic & residence.",
+    avatar: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
   }
 ];
 

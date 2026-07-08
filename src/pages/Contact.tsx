@@ -160,10 +160,10 @@ const Contact = () => {
                     className="w-full bg-transparent border-b border-gray-200 text-[#1C1A17] py-3 focus:outline-none focus:border-[#A87B51] transition-colors font-light text-lg appearance-none cursor-pointer"
                   >
                     <option value="" disabled className="bg-[#ffffff] text-gray-400">Select a service</option>
-                    <option value="residential" className="bg-[#ffffff] text-[#1C1A17]">Residential Construction</option>
-                    <option value="renovation" className="bg-[#ffffff] text-[#1C1A17]">Luxury Renovation</option>
-                    <option value="interior" className="bg-[#ffffff] text-[#1C1A17]">Interior Architecture</option>
-                    <option value="commercial" className="bg-[#ffffff] text-[#1C1A17]">Commercial Masterpiece</option>
+                    <option value="residential" className="bg-[#ffffff] text-[#1C1A17]">Residential House Construction</option>
+                    <option value="renovation" className="bg-[#ffffff] text-[#1C1A17]">Home Renovation & Remodelling</option>
+                    <option value="interior" className="bg-[#ffffff] text-[#1C1A17]">3D Design & Interior Architecture</option>
+                    <option value="commercial" className="bg-[#ffffff] text-[#1C1A17]">Commercial Workspace Construction</option>
                   </select>
                   <div className="absolute right-2 top-4 pointer-events-none text-gray-400">
                     ▼
@@ -180,7 +180,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full bg-transparent border-b border-gray-200 text-[#1C1A17] py-3 focus:outline-none focus:border-[#A87B51] transition-colors font-light text-lg resize-none"
-                  placeholder="Tell us about your project legacy..."
+                  placeholder="Tell us about your requirements (e.g., plot size, number of floors, city location, preferred start date)..."
                 ></textarea>
               </div>
 

@@ -1,30 +1,30 @@
 import { motion } from 'framer-motion';
-import { Home, Compass, Building2, HeartHandshake } from 'lucide-react';
+import { ShieldCheck, Compass, LockKeyhole, Smartphone } from 'lucide-react';
 
 const features = [
   {
     id: '01',
-    icon: Home,
-    title: 'ARTISAN CRAFTSMANSHIP',
-    desc: 'Carefully selected materials, expertly built to deliver rich aesthetics and a memorable experience.'
+    icon: ShieldCheck,
+    title: '310+ QUALITY CHECKS',
+    desc: 'Systematic audits conducted by certified QA engineers at every build stage—from excavation to structural handover.'
   },
   {
     id: '02',
     icon: Compass,
-    title: 'CURATED DESIGNS',
-    desc: 'Handcrafted structures and interiors prepared fresh with quality materials and thoughtful presentation.'
+    title: 'CUSTOM 3D DESIGNS',
+    desc: 'Expert architecture, Vastu-compliant spacing, structural drawings, and realistic 3D elevation walkthroughs.'
   },
   {
     id: '03',
-    icon: Building2,
-    title: 'PREMIUM AMBIENCE',
-    desc: 'Beautiful spaces designed for relaxing conversations, productive meetings and special celebrations.'
+    icon: LockKeyhole,
+    title: 'ESCROW-SAFE PAYMENTS',
+    desc: '100% money protection. Funds are safely held in escrow and released only when verified construction milestones are met.'
   },
   {
     id: '04',
-    icon: HeartHandshake,
-    title: 'GENUINE PARTNERSHIP',
-    desc: 'Attentive service and welcoming experiences that make every project feel comfortable and special.'
+    icon: Smartphone,
+    title: 'REAL-TIME TRACKING APP',
+    desc: 'Stay informed with daily photos, timeline logs, and material tracking directly from your digital customer dashboard.'
   }
 ];
 
@@ -36,10 +36,10 @@ const ServicesPreview = () => {
         {/* Header section matching screenshot */}
         <div className="text-center mb-16 flex flex-col items-center">
           <span className="text-[#F4A300] text-[10px] tracking-[0.2em] uppercase font-semibold mb-3">
-            THE PRITHVIGRID EXPERIENCE
+            THE PRITHVIGRID PROMISE
           </span>
           <h2 className="text-[#ffffff] text-4xl md:text-5xl font-serif uppercase tracking-wider">
-            WHAT MAKES US SPECIAL?
+            WHY CHOOSE PRITHVIGRID?
           </h2>
         </div>
 

@@ -1,7 +1,9 @@
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import Lenis from 'lenis';
 
 // Pages
 import Home from './pages/Home';
@@ -15,6 +17,24 @@ import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 
 function App() {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.8, // Slow scroll speed for premium smooth experience
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <Router>
       <ScrollToTop />

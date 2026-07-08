@@ -32,8 +32,8 @@ const Hero = () => {
             transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-5xl md:text-7xl lg:text-8xl font-serif leading-[1.05] text-[#ffffff] mb-8"
           >
-            Building the <br />
-            <span className="italic">Timeless</span>
+            Your Dream Home, <br />
+            <span className="italic">Safely Built</span>
           </motion.h1>
 
           <motion.p
@@ -42,7 +42,7 @@ const Hero = () => {
             transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="text-base md:text-lg text-[#ffffff] mb-12 max-w-xl font-light leading-relaxed"
           >
-            Handcrafted spaces that blend structural precision with cinematic atmosphere. We create enduring legacies through the lens of modern masonry.
+            Building your dream home with 100% money safety, absolute transparency, and AI-led quality audits. We bring structural honesty and premium finishing to independent houses, villas, and commercial spaces across India.
           </motion.p>
 
           <motion.div
@@ -73,9 +73,9 @@ const Hero = () => {
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-brand-white/10 pt-12">
             {[
-              { label: 'Industry Mastery', value: '15+ Years' },
-              { label: 'Global Recognitions', value: '40+ Awards' },
-              { label: 'Pure Execution', value: 'Bespoke Design' },
+              { label: 'Quality Assurance', value: '310+ QA Checks' },
+              { label: 'Secure Payments', value: '100% Safe Escrow' },
+              { label: 'Zero Overrun Policy', value: 'On-Time Delivery' },
             ].map((stat, i) => (
               <motion.div
                 key={i}

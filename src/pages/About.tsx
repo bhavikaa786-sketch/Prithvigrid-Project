@@ -57,7 +57,7 @@ const About = () => {
               className="text-6xl md:text-8xl font-serif leading-tight mb-12"
               style={{ color: '#ffffff' }}
             >
-              Crafting the <br /><span className="italic">Foundations of Legacy</span>
+              Redefining <br /><span className="italic">Home Construction in India</span>
             </motion.h1>
           </motion.div>
         </div>
@@ -89,12 +89,12 @@ const About = () => {
               viewport={{ once: true }}
               className="lg:col-span-6 space-y-12"
             >
-              <h2 className="text-4xl font-serif text-gray-900 italic">"We don't just build structures; we curate environments that inspire."</h2>
+              <h2 className="text-4xl font-serif text-gray-900 italic">"Building homes with absolute trust, verified quality, and on-time execution."</h2>
               <p className="text-gray-600 text-xl leading-relaxed font-light">
-                Founded on the principles of architectural restraint and structural integrity, PrithviGrid has spent over two decades redefining the luxury landscape. Our journey began with a single vision: to merge the raw honesty of industrial materials with the refined elegance of modern design.
+                PrithviGrid was founded with a clear vision: to resolve the traditional challenges and mistrust in the Indian home construction sector. Historically, building a home has been a stressful journey plagued by cost overruns, quality compromises, and endless delays.
               </p>
               <p className="text-gray-600 text-xl leading-relaxed font-light">
-                Today, our team of master builders and visionary planners work in tandem to deliver projects that are as technically sound as they are visually arresting.
+                We address these issues by combining professional project management, a milestone-based escrow payment gate, and a rigorous quality auditing process. Our platform connects you with verified construction partners and tracks every stage of your home's construction digitally.
               </p>
             </motion.div>
           </div>
@@ -106,9 +106,9 @@ const About = () => {
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: 'Performance', desc: 'We build for generations, not just for the moment. Our materials and methods are chosen for their enduring quality.' },
-              { title: 'Clarity', desc: 'Design should be intuitive and honest. We strip away the unnecessary to reveal the essential beauty of space.' },
-              { title: 'Mastery', desc: 'Our craftsmen are artisans of the trade. Every joint, every pour, and every finish is executed with surgical precision.' }
+              { title: 'Escrow Protection', desc: 'Zero upfront risk. Payments are securely held in escrow and released to contractors only after our engineers verify that each construction milestone has been met.' },
+              { title: '310+ Quality Checks', desc: 'Our independent QA team conducts systematic structural audits at every stage—checking soil compaction, concrete grading, waterproofing, and finishing.' },
+              { title: 'Zero Cost Overrun', desc: 'What we quote is what you pay. We secure complete materials and contractor schedules upfront, guaranteeing no budget creep once excavation begins.' }
             ].map((value, i) => {
               const isClicked = !!clickedBoxes[value.title];
               return (

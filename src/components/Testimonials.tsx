@@ -5,23 +5,23 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 const testimonials = [
   {
     id: 1,
-    text: "PrithviGrid transformed our outdated commercial space into a modern, functional masterpiece. Their attention to detail and commitment to the timeline was unprecedented.",
-    author: "Sarah Jenkins",
-    role: "CEO, Elevate Tech",
+    text: "PrithviGrid constructed our commercial tech workspace block. What blew me away was their absolute budget predictability—zero cost overrun and completed exactly on schedule.",
+    author: "Sneha Reddy",
+    role: "Founder, Zenith Studios, Hyderabad",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=688&q=80"
   },
   {
     id: 2,
-    text: "Building our custom luxury home with PrithviGrid was a seamless experience. They understood our vision perfectly and executed it with precision and premium craftsmanship.",
-    author: "David & Emma Thompson",
-    role: "Homeowners",
+    text: "Building our dream villa with PrithviGrid was an absolute pleasure. Their milestone-based escrow system meant zero risk for us, and the structural quality exceeded all expectations.",
+    author: "The Sharma Family",
+    role: "Whitefield, Bangalore",
     image: "https://images.unsplash.com/photo-1537511446984-935f663eb1f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
   },
   {
     id: 3,
-    text: "The architectural insight and construction quality provided by their team is unmatched in the industry. They don't just build; they create art.",
-    author: "Michael Chen",
-    role: "Principal Architect, Chen Designs",
+    text: "The combination of Vastu-compliant spacing, structural design stability checks, and 10-year warranty certificate made PrithviGrid the best decision for our combined clinic & residence.",
+    author: "Dr. Rajesh K.",
+    role: "Baner, Pune",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80"
   }
 ];

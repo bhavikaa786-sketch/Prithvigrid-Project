@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 const categories = ['All', 'Residential', 'Renovations', 'Commercial', 'Architecture'];
 
 const allProjects = [
-  { id: 1, title: 'The Glass House', category: 'Architecture', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80', span: 'col-span-1 md:col-span-2' },
-  { id: 2, title: 'Modern Villa', category: 'Residential', image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80', span: 'col-span-1' },
-  { id: 3, title: 'Obsidian Suite', category: 'Renovations', image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80', span: 'col-span-1' },
-  { id: 4, title: 'HQ Tower', category: 'Commercial', image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80', span: 'col-span-1 md:col-span-2' },
-  { id: 5, title: 'Zen Retreat', category: 'Architecture', image: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80', span: 'col-span-1' },
-  { id: 6, title: 'Luxe Loft', category: 'Renovations', image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80', span: 'col-span-1 md:col-span-2' },
+  { id: 1, title: 'Noida Sector 62 Glasshouse', category: 'Architecture', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80', span: 'col-span-1 md:col-span-2' },
+  { id: 2, title: 'Bangalore Whitefield Heritage', category: 'Residential', image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80', span: 'col-span-1' },
+  { id: 3, title: 'Gurgaon Phase 5 Duplex', category: 'Renovations', image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80', span: 'col-span-1' },
+  { id: 4, title: 'Gachibowli Tech Hub', category: 'Commercial', image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80', span: 'col-span-1 md:col-span-2' },
+  { id: 5, title: 'Pune Baner Retreat', category: 'Architecture', image: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80', span: 'col-span-1' },
+  { id: 6, title: 'Mumbai Bandra Penthouse', category: 'Renovations', image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80', span: 'col-span-1 md:col-span-2' },
 ];
 
 const Projects = () => {

@@ -4,46 +4,46 @@ import { motion } from 'framer-motion';
 const services = [
   {
     title: 'Residential Construction',
-    desc: 'From architectural concept to structural completion, we build bespoke estates that stand as testaments to refined living.',
+    desc: 'From architectural planning to structural handover, we construct custom modern houses, villas, and independent floors tailored to your lifestyle and Vastu requirements.',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'
   },
   {
-    title: 'Luxury Renovation',
-    desc: 'Breathing new life into historic structures, we meticulously restore and modernize spaces while preserving their original soul.',
+    title: 'Quality & Structural Audits',
+    desc: 'Certified QA engineers conduct intensive inspections spanning foundation casting, slab reinforcement, brick alignment, plumbing pressure, and finish aesthetics.',
     image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'
   },
   {
-    title: 'Interior Architecture',
-    desc: 'Curating every surface and detail to create a cohesive atmosphere that transcends traditional interior design.',
+    title: '3D Architecture & Design',
+    desc: 'Create spatial layouts with Vastu compliance, detailed 2D/3D elevations, structural blueprints, and complete interior space mapping before breaking ground.',
     image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'
   },
   {
-    title: 'Commercial Masterpieces',
-    desc: 'Visionary professional environments designed to inspire creativity and project a legacy of corporate excellence.',
+    title: 'Commercial Construction',
+    desc: 'Turnkey solutions for retail outlets, office workspace blocks, clinics, and light warehouses built with optimized materials and strict timeline adherence.',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'
   }
 ];
 
 const expertiseAreas = [
   {
-    title: 'Fabrication Shop',
+    title: 'Escrow Account Safety',
     image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    desc: 'We meet our client\'s fabrication requirements through innovative production means and methods that make the construction process more efficient, cost-effective, and safer.'
+    desc: 'Payments are linked to milestones and secured in an escrow system. Money is only released to builders after verified stage completion reports.'
   },
   {
-    title: 'Offsite Construction',
+    title: 'QASCON Quality Inspections',
     image: 'https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    desc: 'Our offsite construction facilities allow for precision building in a controlled environment, ensuring higher quality and faster project delivery.'
+    desc: 'Our certified QA engineers use standard audit frameworks to inspect materials, curing, alignments, and strength at every major gateway.'
   },
   {
-    title: 'Supply Chain Management',
+    title: 'Branded Material Sourcing',
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    desc: 'Optimized logistics and material sourcing to keep your projects on schedule and within budget, mitigating industry risks.'
+    desc: 'Get absolute transparency in material grades. We procure steel, cement, fixtures, and wiring directly from top trusted brands at standard pricing.'
   },
   {
-    title: 'Virtual Design & Construction',
+    title: 'Interactive 3D Walkthroughs',
     image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    desc: 'Utilizing advanced BIM and 3D modeling to coordinate complex systems and visualize the end product before breaking ground.'
+    desc: 'Visualize details of structural load paths, plumbing layouts, Vastu compliance, and internal spacing through virtual floor plan rendering.'
   }
 ];
 

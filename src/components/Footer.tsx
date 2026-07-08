@@ -39,8 +39,8 @@ const Footer = () => {
             <div>
               <h4 className="text-[13px] uppercase tracking-[0.25em] text-[#000000] mb-4 font-semibold">Address</h4>
               <p className="text-sm text-brand-concrete uppercase tracking-wide font-light leading-relaxed">
-                <span className="font-bold text-[#000000]">PrithviGrid Architects</span><br />
-                <span className="text-xs text-brand-concrete/70 font-light block mb-2 font-sans normal-case">(A Unit of PrithviGrid Operations Pvt. Ltd.)</span>
+                <span className="font-bold text-[#000000]">PrithviGrid Constructions</span><br />
+                <span className="text-xs text-brand-concrete/70 font-light block mb-2 font-sans normal-case">(A Unit of PrithviGrid Constructions Pvt. Ltd.)</span>
                 Level 42, The Landmark Building<br />
                 Connaught Place, New Delhi<br />
                 India, 110001
@@ -92,7 +92,7 @@ const Footer = () => {
       <div className="bg-[#0B3C5D]">
         <div className="container mx-auto px-6 md:px-12 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-xs uppercase tracking-[0.2em] text-[#ffffff]">
-            © {new Date().getFullYear()} PrithviGrid. Architectural Excellence.
+            © {new Date().getFullYear()} PrithviGrid. India's Trusted Construction Partner.
           </p>
           <div className="flex gap-6">
             <Link to="#" className="text-xs text-[#ffffff]/80 hover:text-white uppercase tracking-[0.2em] transition-colors">

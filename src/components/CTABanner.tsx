@@ -15,17 +15,16 @@ const CTABanner = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-5xl md:text-7xl font-serif text-[#ffffff] mb-8">
-            Ready to Build Your <span className="italic">Legacy?</span>
+            Ready to Build Your <span className="italic">Dream Home?</span>
           </h2>
           <p className="text-[#F4A300] text-lg mb-12 max-w-2xl mx-auto font-light">
-            We are currently accepting inquiries for late 2024 and 2025 commissions. 
-            Let's discuss how we can bring your vision to life.
+            Calculate your construction cost instantly or book a session with our site planning experts. We build in major cities across India with zero cost escalations.
           </p>
           <Link
             to="/contact"
             className="inline-block px-12 py-5 bg-[#000000] text-[#ffffff] text-[11px] uppercase tracking-[0.3em] font-bold hover:bg-brand-gold hover:text-white transition-all duration-500"
           >
-            Start a Consultation
+            Get Estimation
           </Link>
         </motion.div>
       </div>
