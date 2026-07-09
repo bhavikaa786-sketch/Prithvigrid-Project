@@ -96,7 +96,7 @@ const Services = () => {
               <span className="text-[12px] uppercase tracking-[0.4em] text-[#F4A300] mb-8 block font-medium">
                 Our Expertise
               </span>
-              <h1 className="text-6xl md:text-8xl font-serif leading-tight text-[#ffffff]">
+              <h1 className="text-4xl sm:text-6xl md:text-8xl font-serif leading-tight text-[#ffffff]">
                 Disciplines of <br /><span className="italic">Execution</span>
               </h1>
             </div>

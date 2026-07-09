@@ -91,26 +91,36 @@ const Navbar = () => {
             className="fixed inset-0 z-40 bg-brand-black flex flex-col justify-center items-center gap-8 lg:hidden"
           >
             <button
-              className="absolute top-8 right-8 text-[#ffffff]"
+              className="absolute top-8 right-8 text-[#000000] hover:opacity-70 transition-opacity"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <X size={32} />
             </button>
 
-            <Link to="/" className="text-sm tracking-[0.3em] uppercase text-brand-gold mb-12">PrithviGrid</Link>
+            <Link to="/" className="mb-12" onClick={() => setIsMobileMenuOpen(false)}>
+              <img
+                src={logo}
+                alt="PrithviGrid Construction Logo"
+                className="h-16 object-contain"
+              />
+            </Link>
 
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className="text-2xl font-serif italic text-[#ffffff] hover:text-brand-gold transition-colors"
+                className={`text-2xl font-serif italic transition-colors duration-300 ${
+                  location.pathname === link.path ? 'text-[#F4A300]' : 'text-[#000000] hover:text-[#F4A300]'
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
               </Link>
             ))}
             <Link
               to="/contact"
-              className="mt-8 px-12 py-4 border border-brand-gold text-brand-gold uppercase tracking-[0.2em] text-xs hover:bg-brand-gold hover:text-brand-black transition-all"
+              className="mt-8 px-12 py-4 border border-[#000000] text-[#000000] uppercase tracking-[0.2em] text-xs hover:bg-[#000000] hover:text-[#ffffff] transition-all duration-500 font-medium"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Inquire Now
             </Link>

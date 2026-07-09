@@ -210,7 +210,7 @@ const ProjectDetails = () => {
               </Link>
             </motion.div>
             <motion.h1
-              className="text-6xl md:text-8xl font-serif"
+              className="text-4xl sm:text-6xl md:text-8xl font-serif"
               style={{ color: '#ffffff' }}
               initial={{ opacity: 0, y: 55 }}
               animate={{ opacity: 1, y: 0 }}
@@ -399,7 +399,7 @@ const ProjectDetails = () => {
               </motion.span>
               <div onClick={handleNextClick} className="group inline-block cursor-pointer">
                 <motion.h2
-                  className="text-6xl md:text-8xl font-serif italic transition-colors duration-500 hover:text-[#F4A300]"
+                  className="text-4xl sm:text-6xl md:text-8xl font-serif italic transition-colors duration-500 hover:text-[#F4A300]"
                   style={{ color: isNextClicked ? '#F4A300' : '#0B3C5D' }}
                   custom={0.15}
                   variants={childVariants}
@@ -427,7 +427,7 @@ const ProjectDetails = () => {
               <span className="text-[10px] uppercase tracking-[0.4em] text-brand-gold mb-8 block">
                 Portfolio End
               </span>
-              <h2 className="text-6xl md:text-8xl font-serif italic text-[#0B3C5D] mb-12">
+              <h2 className="text-4xl sm:text-6xl md:text-8xl font-serif italic text-[#0B3C5D] mb-12">
                 Final Project
               </h2>
               <Link to="/projects" className="inline-block px-10 py-4 border border-[#0B3C5D] text-[#0B3C5D] text-[11px] uppercase tracking-[0.2em] hover:bg-[#0B3C5D] hover:text-white transition-all duration-500 font-medium">

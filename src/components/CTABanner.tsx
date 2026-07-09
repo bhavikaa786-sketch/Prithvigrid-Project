@@ -14,7 +14,7 @@ const CTABanner = () => {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-5xl md:text-7xl font-serif text-[#ffffff] mb-8">
+          <h2 className="text-3xl sm:text-5xl md:text-7xl font-serif text-[#ffffff] mb-8">
             Ready to Build Your <span className="italic">Dream Home?</span>
           </h2>
           <p className="text-[#F4A300] text-lg mb-12 max-w-2xl mx-auto font-light">

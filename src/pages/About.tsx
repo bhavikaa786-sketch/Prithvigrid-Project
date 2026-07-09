@@ -54,7 +54,7 @@ const About = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="text-6xl md:text-8xl font-serif leading-tight mb-12"
+              className="text-4xl sm:text-6xl md:text-8xl font-serif leading-tight mb-12"
               style={{ color: '#ffffff' }}
             >
               Redefining <br /><span className="italic">Home Construction in India</span>

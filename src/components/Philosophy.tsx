@@ -16,7 +16,7 @@ const Philosophy = () => {
             className="lg:col-span-7"
           >
             <span className="text-[10px] uppercase tracking-[0.4em] text-brand-gold mb-8 block font-medium">Our Philosophy</span>
-            <h2 className="text-5xl md:text-7xl font-serif italic leading-tight text-white mb-12">
+            <h2 className="text-3xl sm:text-5xl md:text-7xl font-serif italic leading-tight text-white mb-12">
               "Building a home is the milestone of a lifetime. We make it completely transparent, reliable, and stress-free."
             </h2>
             <div className="w-24 h-[1px] bg-brand-gold/50" />

@@ -104,7 +104,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-5xl md:text-7xl font-serif text-[#1C1A17] uppercase tracking-wider"
+            className="text-3xl sm:text-5xl md:text-7xl font-serif text-[#1C1A17] uppercase tracking-wider"
           >
             Start Your <span className="italic text-[#F4A300] lowercase font-normal">commission</span>
           </motion.h1>

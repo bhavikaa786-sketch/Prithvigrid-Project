@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section className="relative h-screen w-full flex items-center overflow-hidden">
+    <section className="relative min-h-screen md:h-screen w-full flex flex-col md:flex-row md:items-center overflow-hidden">
       {/* Background Image with Parallax Effect */}
       <motion.div 
         initial={{ scale: 1 }}
-        animate={{ scale: 1.1 }}
+        animate={{ scale: 1.15 }}
         transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
         className="absolute inset-0 z-0"
       >
@@ -24,13 +24,13 @@ const Hero = () => {
       <div className="absolute inset-0 z-[5] bg-gradient-to-b from-[#000000]/60 via-transparent to-[#000000]/40" />
       <div className="absolute inset-0 z-[5] bg-gradient-to-r from-[#000000]/60 via-transparent to-transparent" />
 
-      <div className="container mx-auto px-6 md:px-12 relative z-30 pt-48 pb-48">
+      <div className="container mx-auto px-6 md:px-12 relative z-30 pt-36 pb-8 md:pt-48 md:pb-48">
         <div className="max-w-4xl">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl md:text-7xl lg:text-8xl font-serif leading-[1.05] text-[#ffffff] mb-8"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif leading-[1.05] text-[#ffffff] mb-8"
           >
             Your Dream Home, <br />
             <span className="italic">Safely Built</span>
@@ -49,17 +49,17 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-wrap items-center gap-8 mb-20"
+            className="flex flex-wrap items-center gap-4 sm:gap-8 mb-12 md:mb-20"
           >
             <Link
               to="/projects"
-              className="px-10 py-4 bg-[var(--background)] text-[var(--foreground)] border border-[var(--background)] text-[11px] uppercase tracking-[0.2em] hover:bg-[var(--foreground)] hover:text-[var(--background)] hover:border-[var(--foreground)] transition-all duration-500 font-medium"
+              className="px-6 py-3 sm:px-10 sm:py-4 bg-[var(--background)] text-[var(--foreground)] border border-[var(--background)] text-[11px] uppercase tracking-[0.2em] hover:bg-[var(--foreground)] hover:text-[var(--background)] hover:border-[var(--foreground)] transition-all duration-500 font-medium"
             >
               Our Portfolio
             </Link>
             <Link
               to="/process"
-              className="px-10 py-4 bg-[var(--background)] text-[var(--foreground)] border border-[var(--background)] text-[11px] uppercase tracking-[0.2em] hover:bg-[var(--foreground)] hover:text-[var(--background)] hover:border-[var(--foreground)] transition-all duration-500 font-medium inline-flex items-center gap-3 group"
+              className="px-6 py-3 sm:px-10 sm:py-4 bg-[var(--background)] text-[var(--foreground)] border border-[var(--background)] text-[11px] uppercase tracking-[0.2em] hover:bg-[var(--foreground)] hover:text-[var(--background)] hover:border-[var(--foreground)] transition-all duration-500 font-medium inline-flex items-center gap-3 group"
             >
               The Process
               <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-300" />
@@ -69,9 +69,9 @@ const Hero = () => {
       </div>
 
       {/* Floating Bottom Stats */}
-      <div className="absolute bottom-12 left-0 right-0 z-20 pointer-events-none">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-brand-white/10 pt-12">
+      <div className="relative md:absolute bottom-0 md:bottom-12 left-0 right-0 z-20 pointer-events-none mt-auto md:mt-0 w-full">
+        <div className="container mx-auto px-6 md:px-12 pb-12 md:pb-0">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 border-t border-brand-white/10 pt-8 md:pt-12">
             {[
               { label: 'Quality Assurance', value: '310+ QA Checks' },
               { label: 'Secure Payments', value: '100% Safe Escrow' },
