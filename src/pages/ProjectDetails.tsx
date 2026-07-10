@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/set-state-in-effect */
 import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
@@ -149,12 +148,14 @@ const ProjectDetails = () => {
   const [isGallery2Colored, setIsGallery2Colored] = useState(false);
   const navigate = useNavigate();
 
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
-    if (isBoxClicked) setIsBoxClicked(false);
-    if (isNextClicked) setIsNextClicked(false);
-    if (isGallery1Colored) setIsGallery1Colored(false);
-    if (isGallery2Colored) setIsGallery2Colored(false);
-  }, [projectId, isBoxClicked, isNextClicked, isGallery1Colored, isGallery2Colored]);
+    setIsBoxClicked(false);
+    setIsNextClicked(false);
+    setIsGallery1Colored(false);
+    setIsGallery2Colored(false);
+  }, [projectId]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   const handleNextClick = (e: React.MouseEvent) => {
     e.preventDefault();

@@ -59,7 +59,7 @@ const Contact = () => {
         method: 'POST',
         mode: 'no-cors', // Avoids CORS redirect blockages from Google Apps Script redirect URL
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'text/plain',
         },
         body: JSON.stringify(formData),
       });
