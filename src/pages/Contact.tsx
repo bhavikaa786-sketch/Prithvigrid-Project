@@ -1,15 +1,10 @@
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
   
-  console.log('serviceId:', import.meta.env.VITE_EMAILJS_SERVICE_ID);
-  console.log('templateId:', import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
-  console.log('publicKey:', import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
-
   const [formData, setFormData] = useState({
     from_name: '',
     from_email: '',
@@ -41,12 +36,10 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    const sheetsUrl = import.meta.env.VITE_GOOGLE_SHEETS_URL;
 
-    if (!serviceId || !templateId || !publicKey || serviceId === 'your_service_id') {
-      console.warn('EmailJS keys not configured. Simulating successful send in development.');
+    if (!sheetsUrl || sheetsUrl === 'your_google_sheets_web_app_url') {
+      console.warn('Google Sheets Web App URL not configured. Simulating successful submit in development.');
       setTimeout(() => {
         setIsSubmitting(false);
         setSubmitStatus('success');
@@ -61,26 +54,26 @@ const Contact = () => {
     }
 
     try {
-      const response = await emailjs.sendForm(
-        serviceId,
-        templateId,
-        formRef.current!,
-        publicKey
-      );
+      // POST form data as JSON to Google Sheets web app
+      await fetch(sheetsUrl, {
+        method: 'POST',
+        mode: 'no-cors', // Avoids CORS redirect blockages from Google Apps Script redirect URL
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-      if (response.status === 200) {
-        setSubmitStatus('success');
-        setFormData({
-          from_name: '',
-          from_email: '',
-          project_type: '',
-          message: '',
-        });
-      } else {
-        setSubmitStatus('error');
-      }
+      // Response is opaque under no-cors, so we count successful post as success
+      setSubmitStatus('success');
+      setFormData({
+        from_name: '',
+        from_email: '',
+        project_type: '',
+        message: '',
+      });
     } catch (error) {
-      console.error('Failed to send email:', error);
+      console.error('Failed to submit form to Google Sheets:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -209,7 +202,7 @@ const Contact = () => {
               <button 
                 type="submit"
                 disabled={isSubmitting}
-                className="group px-10 py-4 bg-[var(--foreground)] text-[var(--background)] border border-[var(--foreground)] text-[11px] uppercase tracking-[0.2em] hover:bg-transparent hover:text-[var(--foreground)] transition-all duration-500 font-medium inline-flex items-center gap-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="group px-10 py-4 bg-[var(--foreground)] text-[var(--background)] border border-[var(--foreground)] text-[11px] uppercase tracking-[0.2em] rounded-full hover:bg-transparent hover:text-[var(--foreground)] transition-all duration-500 font-medium inline-flex items-center gap-4 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Sending Inquiry...' : 'Send Inquiry'}
                 <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-300" />

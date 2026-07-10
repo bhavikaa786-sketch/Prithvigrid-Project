@@ -18,13 +18,13 @@ const CTABanner = () => {
             Ready to Build Your <span className="italic">Dream Home?</span>
           </h2>
           <p className="text-[#F4A300] text-lg mb-12 max-w-2xl mx-auto font-light">
-            Calculate your construction cost instantly or book a session with our site planning experts. We build in major cities across India with zero cost escalations.
+            Connect with our construction experts to discuss your project requirements. We build in major cities across India with zero cost escalations.
           </p>
           <Link
             to="/contact"
-            className="inline-block px-12 py-5 bg-[#000000] text-[#ffffff] text-[11px] uppercase tracking-[0.3em] font-bold hover:bg-brand-gold hover:text-white transition-all duration-500"
+            className="inline-block px-12 py-5 bg-[#E6E1DA] text-[#1C1A17] text-[11px] uppercase tracking-[0.3em] font-bold rounded-full hover:bg-brand-gold hover:text-white transition-all duration-500"
           >
-            Get Estimation
+            Get a Free Consultation
           </Link>
         </motion.div>
       </div>

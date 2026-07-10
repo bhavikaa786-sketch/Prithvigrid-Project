@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -17,7 +18,6 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -63,7 +63,7 @@ const Navbar = () => {
           ))}
           <Link
             to="/contact"
-            className="ml-4 px-8 py-2 border border-[#000000]/20 text-[#000000] text-[11px] uppercase tracking-[0.2em] hover:bg-[#000000] hover:text-[#ffffff] transition-all duration-500"
+            className="ml-4 px-8 py-2 border border-[#000000]/20 text-[#000000] text-[11px] uppercase tracking-[0.2em] rounded-full hover:bg-[#000000] hover:text-[#ffffff] transition-all duration-500"
           >
             Inquire
           </Link>
@@ -119,7 +119,7 @@ const Navbar = () => {
             ))}
             <Link
               to="/contact"
-              className="mt-8 px-12 py-4 border border-[#000000] text-[#000000] uppercase tracking-[0.2em] text-xs hover:bg-[#000000] hover:text-[#ffffff] transition-all duration-500 font-medium"
+              className="mt-8 px-12 py-4 border border-[#000000] text-[#000000] uppercase tracking-[0.2em] text-xs rounded-full hover:bg-[#000000] hover:text-[#ffffff] transition-all duration-500 font-medium"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Inquire Now

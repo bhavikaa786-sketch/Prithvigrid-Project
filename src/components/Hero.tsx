@@ -53,13 +53,13 @@ const Hero = () => {
           >
             <Link
               to="/projects"
-              className="px-6 py-3 sm:px-10 sm:py-4 bg-[var(--background)] text-[var(--foreground)] border border-[var(--background)] text-[11px] uppercase tracking-[0.2em] hover:bg-[var(--foreground)] hover:text-[var(--background)] hover:border-[var(--foreground)] transition-all duration-500 font-medium"
+              className="px-6 py-3 sm:px-10 sm:py-4 bg-[var(--background)] text-[var(--foreground)] border border-[var(--background)] text-[11px] uppercase tracking-[0.2em] rounded-full hover:bg-[var(--foreground)] hover:text-[var(--background)] hover:border-[var(--foreground)] transition-all duration-500 font-medium"
             >
               Our Portfolio
             </Link>
             <Link
               to="/process"
-              className="px-6 py-3 sm:px-10 sm:py-4 bg-[var(--background)] text-[var(--foreground)] border border-[var(--background)] text-[11px] uppercase tracking-[0.2em] hover:bg-[var(--foreground)] hover:text-[var(--background)] hover:border-[var(--foreground)] transition-all duration-500 font-medium inline-flex items-center gap-3 group"
+              className="px-6 py-3 sm:px-10 sm:py-4 bg-[var(--background)] text-[var(--foreground)] border border-[var(--background)] text-[11px] uppercase tracking-[0.2em] rounded-full hover:bg-[var(--foreground)] hover:text-[var(--background)] hover:border-[var(--foreground)] transition-all duration-500 font-medium inline-flex items-center gap-3 group"
             >
               The Process
               <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-300" />
