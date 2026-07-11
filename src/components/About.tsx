@@ -24,7 +24,7 @@ const About = () => {
           >
             <div className="relative aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 lg:max-w-none overflow-hidden rounded-sm">
               <img 
-                src="https://images.unsplash.com/photo-1541888086225-ee593257dfde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
+                src="/concrete_pouring.png" 
                 alt="Construction Process" 
                 className="w-full h-full object-cover"
               />

@@ -16,7 +16,7 @@ const articles = [
     title: 'Honest Materials: The Soul of Concrete',
     cat: 'Craftsmanship',
     date: 'Oct 12, 2024',
-    image: 'https://images.unsplash.com/photo-1541888086225-ee593257dfde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80',
+    image: '/concrete_pouring.png',
     desc: 'Understanding the raw beauty and longevity of hand-poured architectural concrete and its role in modern minimalism.',
     featured: false
   },

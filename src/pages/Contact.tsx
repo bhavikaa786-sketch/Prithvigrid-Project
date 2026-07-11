@@ -55,16 +55,17 @@ const Contact = () => {
 
     try {
       // POST form data as JSON to Google Sheets web app
+      // Using 'cors' with a simple Content-Type (text/plain) avoids preflight OPTIONS requests,
+      // while allowing mobile browsers (like iOS Safari) to successfully follow cross-origin redirects.
       await fetch(sheetsUrl, {
         method: 'POST',
-        mode: 'no-cors', // Avoids CORS redirect blockages from Google Apps Script redirect URL
+        mode: 'cors',
         headers: {
-          'Content-Type': 'text/plain',
+          'Content-Type': 'text/plain;charset=utf-8',
         },
         body: JSON.stringify(formData),
       });
 
-      // Response is opaque under no-cors, so we count successful post as success
       setSubmitStatus('success');
       setFormData({
         from_name: '',
